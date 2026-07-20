@@ -1,0 +1,1593 @@
+
+
+Index · HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanjana N — Computer Science Engineer</title>
+<meta name="description" content="Sanjana N — Computer Science Engineering student building intelligent software with AI, Machine Learning and Full-Stack technologies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --bg-elevated: #FAFBFC;
+    --card: #F9FAFB;
+    --card-border: #E5E7EB;
+    --text: #111827;
+    --text-secondary: #6B7280;
+    --accent: #2563EB;
+    --accent-soft: rgba(37, 99, 235, 0.08);
+    --accent-soft-strong: rgba(37, 99, 235, 0.14);
+    --nav-bg: rgba(255, 255, 255, 0.72);
+    --ring: rgba(37, 99, 235, 0.18);
+    --shadow: 0 1px 2px rgba(17, 24, 39, 0.04), 0 8px 24px -12px rgba(17, 24, 39, 0.08);
+    --shadow-hover: 0 4px 12px rgba(17, 24, 39, 0.06), 0 20px 40px -16px rgba(17, 24, 39, 0.14);
+  }
+ 
+  [data-theme="dark"] {
+    --bg: #0F172A;
+    --bg-elevated: #0B1220;
+    --card: #111827;
+    --card-border: #1E293B;
+    --text: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --accent: #3B82F6;
+    --accent-soft: rgba(59, 130, 246, 0.10);
+    --accent-soft-strong: rgba(59, 130, 246, 0.18);
+    --nav-bg: rgba(15, 23, 42, 0.72);
+    --ring: rgba(59, 130, 246, 0.22);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 8px 24px -12px rgba(0, 0, 0, 0.4);
+    --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.3), 0 24px 48px -16px rgba(0, 0, 0, 0.5);
+  }
+ 
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+  }
+ 
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+ 
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background 0.4s ease, color 0.4s ease;
+    -webkit-font-smoothing: antialiased;
+  }
+ 
+  h1, h2, h3, h4, .display {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+ 
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+  img, svg { display: block; max-width: 100%; }
+  button { font-family: inherit; cursor: pointer; }
+ 
+  .wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+ 
+  section { position: relative; }
+ 
+  /* ---------- Focus visibility ---------- */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+ 
+  /* ---------- Nav ---------- */
+  header.nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--nav-bg);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1px solid var(--card-border);
+    transition: border-color 0.4s ease, background 0.4s ease;
+  }
+ 
+  .nav-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 28px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+ 
+  .logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+ 
+  .logo-mark {
+    width: 30px; height: 30px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, var(--accent), var(--accent) 40%, transparent);
+    background-color: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 0.72rem; font-weight: 700;
+    flex-shrink: 0;
+  }
+ 
+  .nav-links {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+ 
+  .nav-links a {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    padding: 8px 14px;
+    border-radius: 7px;
+    transition: color 0.25s ease, background 0.25s ease;
+    position: relative;
+  }
+ 
+  .nav-links a:hover { color: var(--text); background: var(--accent-soft); }
+  .nav-links a.active { color: var(--accent); }
+ 
+  .nav-right { display: flex; align-items: center; gap: 10px; }
+ 
+  .theme-toggle {
+    width: 38px; height: 38px;
+    border-radius: 9px;
+    border: 1px solid var(--card-border);
+    background: var(--card);
+    display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.25s ease, transform 0.15s ease;
+  }
+  .theme-toggle:hover { border-color: var(--accent); transform: translateY(-1px); }
+  .theme-toggle svg { width: 17px; height: 17px; stroke: var(--text); }
+ 
+  .menu-btn {
+    display: none;
+    width: 38px; height: 38px;
+    border-radius: 9px;
+    border: 1px solid var(--card-border);
+    background: var(--card);
+    align-items: center; justify-content: center;
+  }
+  .menu-btn svg { width: 18px; height: 18px; stroke: var(--text); }
+ 
+  .mobile-panel {
+    display: none;
+    flex-direction: column;
+    padding: 8px 28px 20px;
+    border-bottom: 1px solid var(--card-border);
+    background: var(--bg);
+  }
+  .mobile-panel a {
+    padding: 12px 4px;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--card-border);
+  }
+  .mobile-panel a:last-child { border-bottom: none; }
+  .mobile-panel.open { display: flex; }
+ 
+  @media (max-width: 860px) {
+    .nav-links { display: none; }
+    .menu-btn { display: flex; }
+  }
+ 
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 9px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    white-space: nowrap;
+  }
+  .btn svg { width: 15px; height: 15px; }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -8px var(--ring); }
+  .btn-ghost { background: transparent; border-color: var(--card-border); color: var(--text); }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+  .btn-sm { padding: 9px 16px; font-size: 0.82rem; }
+ 
+  .icon-btn {
+    width: 40px; height: 40px;
+    border-radius: 9px;
+    border: 1px solid var(--card-border);
+    display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+    color: var(--text-secondary);
+  }
+  .icon-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+  .icon-btn svg { width: 17px; height: 17px; }
+ 
+  /* ---------- Reveal ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s cubic-bezier(.16,.8,.24,1), transform 0.7s cubic-bezier(.16,.8,.24,1);
+  }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+ 
+  /* ---------- Eyebrow / section heads ---------- */
+  .eyebrow {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 16px; height: 1px;
+    background: var(--accent);
+  }
+  .section-title {
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    margin-bottom: 10px;
+  }
+  .section-sub {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    max-width: 560px;
+    margin-bottom: 52px;
+  }
+  .section-head { margin-bottom: 8px; }
+ 
+  section.pad { padding: 108px 0; }
+  @media (max-width: 700px) { section.pad { padding: 76px 0; } }
+ 
+  .divider {
+    height: 1px;
+    background: var(--card-border);
+    transition: background 0.4s ease;
+  }
+ 
+  /* ---------- Hero ---------- */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+    position: relative;
+    overflow: hidden;
+  }
+ 
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+  }
+  [data-theme="dark"] .hero-bg { opacity: 0.35; }
+ 
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.15fr auto;
+    gap: 64px;
+    align-items: center;
+    width: 100%;
+  }
+ 
+  .hero-eyebrow {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+  .status-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #22C55E;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18);
+  }
+ 
+  .hero h1 {
+    font-size: clamp(2.4rem, 5.6vw, 4rem);
+    line-height: 1.06;
+    margin-bottom: 20px;
+  }
+  .hero h1 span { color: var(--accent); }
+ 
+  .hero-subtitle {
+    font-size: clamp(1.05rem, 2vw, 1.3rem);
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 18px;
+  }
+ 
+  .hero-desc {
+    font-size: 1.02rem;
+    color: var(--text-secondary);
+    max-width: 520px;
+    margin-bottom: 36px;
+  }
+ 
+  .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+  .hero-social { display: flex; gap: 10px; }
+ 
+  .avatar-wrap {
+    width: 260px;
+    height: 260px;
+    position: relative;
+    justify-self: center;
+  }
+  .avatar-ring {
+    position: absolute;
+    inset: -18px;
+    border-radius: 50%;
+    border: 1px dashed var(--card-border);
+    animation: spin 60s linear infinite;
+  }
+  .avatar-ring::before,
+  .avatar-ring::after {
+    content: '';
+    position: absolute;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .avatar-ring::before { top: -3.5px; left: 50%; margin-left: -3.5px; }
+  .avatar-ring::after { bottom: -3.5px; left: 50%; margin-left: -3.5px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+ 
+  .avatar {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(155deg, var(--accent-soft-strong), transparent 60%), var(--card);
+    border: 1px solid var(--card-border);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--accent);
+    box-shadow: var(--shadow);
+  }
+ 
+  @media (max-width: 860px) {
+    .hero-inner { grid-template-columns: 1fr; text-align: left; }
+    .avatar-wrap { width: 160px; height: 160px; justify-self: start; order: -1; margin-bottom: 8px; }
+    .avatar { font-size: 2.6rem; }
+  }
+ 
+  /* ---------- About ---------- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .about-grid p { color: var(--text-secondary); font-size: 1.02rem; margin-bottom: 16px; }
+  .about-grid p:last-child { margin-bottom: 0; }
+ 
+  .fact-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 26px;
+  }
+  .fact-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--card-border);
+    font-size: 0.9rem;
+  }
+  .fact-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .fact-row:first-child { padding-top: 0; }
+  .fact-label { color: var(--text-secondary); }
+  .fact-value { font-weight: 600; text-align: right; }
+ 
+  @media (max-width: 800px) { .about-grid { grid-template-columns: 1fr; gap: 32px; } }
+ 
+  /* ---------- Skills ---------- */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  @media (max-width: 900px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .skills-grid { grid-template-columns: 1fr; } }
+ 
+  .skill-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 24px;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .skill-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+  .skill-card h4 { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); margin-bottom: 16px; font-family: 'Inter', sans-serif; font-weight: 600; }
+  .pill-group { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pill {
+    font-size: 0.83rem;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--text);
+    border: 1px solid transparent;
+  }
+ 
+  /* ---------- Projects ---------- */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 780px) { .projects-grid { grid-template-columns: 1fr; } }
+ 
+  .project-card {
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--card);
+    transition: transform 0.3s cubic-bezier(.16,.8,.24,1), box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .project-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--accent); }
+ 
+  .project-thumb {
+    height: 168px;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-elevated);
+  }
+  .project-thumb svg { width: 100%; height: 100%; }
+ 
+  .project-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+  .project-body h3 { font-size: 1.1rem; margin-bottom: 8px; }
+  .project-body p { color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 18px; flex: 1; }
+ 
+  .tech-row { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 20px; }
+  .tech-tag {
+    font-size: 0.74rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--card-border);
+    color: var(--text-secondary);
+  }
+ 
+  .project-links { display: flex; gap: 10px; }
+  .project-links .btn { flex: 1; justify-content: center; }
+ 
+  /* ---------- Education timeline ---------- */
+  .timeline { position: relative; padding-left: 32px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 5px; top: 6px; bottom: 6px;
+    width: 1px;
+    background: var(--card-border);
+  }
+  .timeline-item { position: relative; padding-bottom: 44px; }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-dot {
+    position: absolute;
+    left: -32px; top: 4px;
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-soft);
+  }
+  .timeline-item h3 { font-size: 1.08rem; margin-bottom: 5px; }
+  .timeline-item .meta { color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 4px; }
+  .timeline-item .cgpa { font-size: 0.86rem; font-weight: 600; color: var(--accent); }
+ 
+  /* ---------- Certifications ---------- */
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 900px) { .cert-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .cert-grid { grid-template-columns: 1fr; } }
+ 
+  .cert-card {
+    border: 1px solid var(--card-border);
+    background: var(--card);
+    border-radius: 13px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+    cursor: pointer;
+  }
+  .cert-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .cert-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .cert-icon {
+    width: 34px; height: 34px;
+    border-radius: 9px;
+    background: var(--accent-soft);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .cert-icon svg { width: 16px; height: 16px; stroke: var(--accent); }
+  .cert-card p { font-size: 0.9rem; font-weight: 500; }
+ 
+  /* ---------- Hackathons & Workshops ---------- */
+  .hack-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  @media (max-width: 780px) { .hack-grid { grid-template-columns: 1fr; } }
+ 
+  .hack-card {
+    border: 1px solid var(--card-border);
+    background: var(--card);
+    border-radius: 14px;
+    padding: 24px;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+    position: relative;
+  }
+  .hack-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+  .hack-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+ 
+  .view-cert-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 14px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .view-cert-hint svg { width: 13px; height: 13px; stroke: var(--accent); }
+  .cert-card { flex-wrap: wrap; }
+  .cert-card .view-cert-hint { width: 100%; margin-top: 10px; margin-left: 47px; }
+ 
+  .hack-top { display: flex; align-items: flex-start; gap: 13px; margin-bottom: 14px; }
+  .hack-icon {
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .hack-icon svg { width: 18px; height: 18px; stroke: var(--accent); }
+  .hack-card h3 { font-size: 1.02rem; margin-bottom: 4px; }
+  .hack-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 10px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+  .hack-meta span { display: flex; align-items: center; gap: 5px; }
+  .hack-meta svg { width: 13px; height: 13px; stroke: var(--text-secondary); }
+  .hack-card p.desc { font-size: 0.9rem; color: var(--text-secondary); }
+ 
+  /* ---------- Certificate lightbox ---------- */
+  .cert-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(15, 23, 42, 0.72);
+    backdrop-filter: blur(4px);
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+  }
+  .cert-modal-overlay.open { display: flex; }
+  .cert-modal {
+    position: relative;
+    max-width: 880px;
+    width: 100%;
+    max-height: 86vh;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: var(--shadow-hover);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .cert-modal-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .cert-modal-head h3 { font-size: 1.05rem; }
+  .cert-modal-close {
+    width: 34px; height: 34px;
+    border-radius: 9px;
+    border: 1px solid var(--card-border);
+    background: var(--bg-elevated);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-secondary);
+    flex-shrink: 0;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+  .cert-modal-close:hover { border-color: var(--accent); color: var(--accent); }
+  .cert-modal-close svg { width: 16px; height: 16px; }
+  .cert-modal-body {
+    flex: 1;
+    overflow: auto;
+    border-radius: 10px;
+    background: var(--bg-elevated);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+  }
+  .cert-modal-body img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+  }
+  .cert-modal-fallback {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+  .cert-modal-fallback svg { width: 32px; height: 32px; stroke: var(--text-secondary); margin: 0 auto 12px; }
+ 
+  /* ---------- Currently Working On ---------- */
+  .now-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+  @media (max-width: 780px) { .now-grid { grid-template-columns: 1fr; } }
+ 
+  .now-card {
+    border: 1px solid var(--card-border);
+    background: var(--card);
+    border-radius: 16px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .now-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+ 
+  .now-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; gap: 12px; }
+  .now-title { display: flex; align-items: center; gap: 10px; font-size: 1.08rem; }
+  .now-emoji {
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #22C55E;
+    background: rgba(34, 197, 94, 0.1);
+    padding: 5px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .status-badge .status-dot { box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18); }
+ 
+  .now-card p.desc { font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 18px; }
+  .now-label { font-size: 0.76rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); margin-bottom: 10px; }
+ 
+  /* ---------- Contact ---------- */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 56px;
+  }
+  @media (max-width: 800px) { .contact-grid { grid-template-columns: 1fr; gap: 36px; } }
+ 
+  .contact-links { display: flex; flex-direction: column; gap: 14px; }
+  .contact-link-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    background: var(--card);
+    transition: border-color 0.25s ease, transform 0.25s ease;
+  }
+  .contact-link-row:hover { border-color: var(--accent); transform: translateX(4px); }
+  .contact-link-row .ic {
+    width: 38px; height: 38px;
+    border-radius: 9px;
+    background: var(--accent-soft);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-link-row .ic svg { width: 17px; height: 17px; stroke: var(--accent); }
+  .contact-link-row .label { font-size: 0.76rem; color: var(--text-secondary); margin-bottom: 2px; }
+  .contact-link-row .value { font-size: 0.92rem; font-weight: 600; }
+ 
+  form.contact-form { display: flex; flex-direction: column; gap: 16px; }
+  .field { display: flex; flex-direction: column; gap: 7px; }
+  .field label { font-size: 0.82rem; font-weight: 600; color: var(--text-secondary); }
+  .field input, .field textarea {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 13px 15px;
+    font-size: 0.92rem;
+    color: var(--text);
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+    resize: none;
+  }
+  .field input:focus, .field textarea:focus { border-color: var(--accent); outline: none; }
+  .field .err { font-size: 0.78rem; color: #EF4444; min-height: 16px; }
+  .form-status {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--accent);
+    min-height: 20px;
+  }
+ 
+  /* ---------- Footer ---------- */
+  footer {
+    padding: 40px 0;
+    border-top: 1px solid var(--card-border);
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+  .footer-inner .socials { display: flex; gap: 10px; }
+ 
+  ::selection { background: var(--accent-soft-strong); color: var(--text); }
+</style>
+</head>
+<body data-theme="light">
+ 
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#home" class="logo"><span class="logo-mark">SN</span> Sanjana N</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#hackathons">Hackathons</a>
+      <a href="#now">Now</a>
+      <a href="#education">Education</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg id="themeIcon" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"></svg>
+      </button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+        <svg fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#hackathons">Hackathons</a>
+    <a href="#now">Now</a>
+    <a href="#education">Education</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+ 
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="wrap hero-inner">
+    <div>
+      <div class="hero-eyebrow reveal"><span class="status-dot"></span> Open to Software Engineering Internships &amp; New-Grad Roles</div>
+      <h1 class="reveal">Hi, I'm <span>Sanjana N</span></h1>
+      <p class="hero-subtitle reveal">Computer Science Engineering Student</p>
+      <p class="hero-desc reveal">I build intelligent software using Artificial Intelligence, Machine Learning, and Full-Stack technologies to solve real-world problems.</p>
+      <div class="hero-cta reveal">
+        <a href="assets/1JB23CS135_SANJANA-N_RESUME.pdf" class="btn btn-primary" id="resumeBtn" download>
+          <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Resume
+        </a>
+        <a href="#projects" class="btn btn-ghost">View Projects</a>
+      </div>
+      <div class="hero-social reveal">
+        <a href="https://github.com/sanjananarendra11" target="_blank" rel="noopener" class="icon-btn" aria-label="GitHub">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/sanjana-n-4679682b8" target="_blank" rel="noopener" class="icon-btn" aria-label="LinkedIn">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="mailto:sanjananarendra11@gmail.com" class="icon-btn" aria-label="Email">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="avatar-wrap reveal">
+      <div class="avatar-ring"></div>
+      <div class="avatar">SN</div>
+    </div>
+  </div>
+</section>
+ 
+<div class="divider wrap" style="max-width:1120px"></div>
+ 
+<!-- ================= ABOUT ================= -->
+<section class="pad" id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">About</p>
+      <h2 class="section-title">A little about me</h2>
+    </div>
+    <div class="about-grid reveal" style="margin-top:40px;">
+      <div>
+        <p>I'm a Computer Science Engineering undergraduate who enjoys turning ideas into working software. My focus sits at the intersection of Artificial Intelligence, Machine Learning, Web Technologies, and IoT — I like projects where a model, an interface, and a piece of hardware all have to work together.</p>
+        <p>Over the last few years I've built systems that detect phishing attempts with NLP, automate campus event logistics end-to-end, generate short-form video content with AI, and control physical hardware over Bluetooth — each one a chance to learn a new layer of the stack.</p>
+        <p>I'm always looking for the next practical problem worth solving, and I'm actively exploring Software Engineering internships and entry-level roles where I can keep learning by building.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-row"><span class="fact-label">Based in</span><span class="fact-value">Karnataka, India</span></div>
+        <div class="fact-row"><span class="fact-label">Focus</span><span class="fact-value">AI · ML · Full-Stack</span></div>
+        <div class="fact-row"><span class="fact-label">Degree</span><span class="fact-value">B.E. — CSE</span></div>
+        <div class="fact-row"><span class="fact-label">Looking for</span><span class="fact-value">SWE Internships</span></div>
+        <div class="fact-row"><span class="fact-label">Status</span><span class="fact-value">Open to work</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<div class="divider wrap" style="max-width:1120px"></div>
+ 
+<!-- ================= SKILLS ================= -->
+<section class="pad" id="skills">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Skills</p>
+      <h2 class="section-title">Tools I build with</h2>
+      <p class="section-sub">A working toolkit spanning languages, frameworks, and the core concepts behind them.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <h4>Languages</h4>
+        <div class="pill-group">
+          <span class="pill">Python</span><span class="pill">Java</span><span class="pill">C</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h4>Frameworks</h4>
+        <div class="pill-group">
+          <span class="pill">Django</span><span class="pill">Flask</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h4>Libraries</h4>
+        <div class="pill-group">
+          <span class="pill">NumPy</span><span class="pill">Pandas</span><span class="pill">Matplotlib</span><span class="pill">Scikit-learn</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h4>Databases</h4>
+        <div class="pill-group">
+          <span class="pill">MySQL</span><span class="pill">SQLite</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h4>Core Concepts</h4>
+        <div class="pill-group">
+          <span class="pill">Artificial Intelligence</span><span class="pill">Machine Learning</span><span class="pill">NLP</span><span class="pill">DSA</span><span class="pill">OOP</span><span class="pill">DBMS</span><span class="pill">Software Engineering</span><span class="pill">Data Analytics</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h4>Tools</h4>
+        <div class="pill-group">
+          <span class="pill">Git</span><span class="pill">GitHub</span><span class="pill">VS Code</span><span class="pill">IntelliJ IDEA</span><span class="pill">Arduino IDE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<div class="divider wrap" style="max-width:1120px"></div>
+ 
+<!-- ================= PROJECTS ================= -->
+<section class="pad" id="projects">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Projects</p>
+      <h2 class="section-title">Things I've built</h2>
+      <p class="section-sub">A selection of projects spanning machine learning, full-stack development, and IoT.</p>
+    </div>
+    <div class="projects-grid">
+ 
+      <div class="project-card reveal">
+        <div class="project-thumb">
+          <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="200" fill="var(--bg-elevated)"/>
+            <circle cx="80" cy="60" r="46" fill="var(--accent-soft)"/>
+            <path d="M40 150 L120 90 L180 130 L260 60 L400 110 L400 200 L40 200 Z" fill="var(--accent-soft-strong)"/>
+            <g stroke="var(--accent)" stroke-width="2" fill="none" opacity="0.6">
+              <circle cx="300" cy="70" r="6"/><circle cx="340" cy="45" r="6"/><circle cx="330" cy="100" r="6"/>
+              <line x1="300" y1="70" x2="340" y2="45"/><line x1="300" y1="70" x2="330" y2="100"/>
+            </g>
+          </svg>
+        </div>
+        <div class="project-body">
+          <h3>MAPIS</h3>
+          <p>AI-powered phishing detection system using Machine Learning and NLP to identify malicious emails and URLs.</p>
+          <div class="tech-row">
+            <span class="tech-tag">Python</span><span class="tech-tag">NLP</span><span class="tech-tag">Scikit-learn</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/sanjananarendra11/MAPIS" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">
+              <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+              Code
+            </a>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="project-card reveal">
+        <div class="project-thumb">
+          <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="200" fill="var(--bg-elevated)"/>
+            <rect x="40" y="40" width="140" height="90" rx="10" fill="var(--accent-soft)"/>
+            <rect x="200" y="70" width="160" height="70" rx="10" fill="var(--accent-soft-strong)"/>
+            <circle cx="110" cy="85" r="18" fill="none" stroke="var(--accent)" stroke-width="3"/>
+            <path d="M100 85 l7 7 14 -14" stroke="var(--accent)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <h3>Campus Event Lifecycle Management System</h3>
+          <p>Django-based event management platform with QR attendance, payment verification, and automated certificate generation.</p>
+          <div class="tech-row">
+            <span class="tech-tag">Django</span><span class="tech-tag">MySQL</span><span class="tech-tag">Python</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/sanjananarendra11/campus-event-lifecycle" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">
+              <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+              Code
+            </a>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="project-card reveal">
+        <div class="project-thumb">
+          <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="200" fill="var(--bg-elevated)"/>
+            <rect x="150" y="30" width="100" height="140" rx="16" fill="var(--accent-soft)"/>
+            <rect x="168" y="52" width="64" height="96" rx="4" fill="var(--accent-soft-strong)"/>
+            <polygon points="190,88 190,112 212,100" fill="var(--accent)"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <h3>AI-Powered YouTube Shorts Generator</h3>
+          <p>Automatically converts long-form videos into engaging YouTube Shorts using AI-driven scene detection and editing.</p>
+          <div class="tech-row">
+            <span class="tech-tag">Python</span><span class="tech-tag">AI</span><span class="tech-tag">Video Processing</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/sanjananarendra11/ai-youtube-shorts-generator" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">
+              <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+              Code
+            </a>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="project-card reveal">
+        <div class="project-thumb">
+          <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="200" fill="var(--bg-elevated)"/>
+            <rect x="190" y="20" width="20" height="80" fill="var(--accent-soft-strong)"/>
+            <polygon points="200,0 235,55 165,55" fill="var(--accent-soft)"/>
+            <circle cx="200" cy="140" r="46" fill="none" stroke="var(--accent)" stroke-width="3" opacity="0.5"/>
+            <circle cx="200" cy="140" r="4" fill="var(--accent)"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <h3>IoT-Based Smart Street Light System</h3>
+          <p>Arduino-based smart lighting system with LDR and IR sensors, RTC scheduling, Bluetooth, and mobile control.</p>
+          <div class="tech-row">
+            <span class="tech-tag">Arduino</span><span class="tech-tag">IoT</span><span class="tech-tag">Bluetooth</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/sanjananarendra11/intelligent-street-light-system" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">
+              <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+              Code
+            </a>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+ 
+<div class="divider wrap" style="max-width:1120px"></div>
+ 
+<!-- ================= HACKATHONS & WORKSHOPS ================= -->
+<section class="pad" id="hackathons">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Hackathons &amp; Workshops</p>
+      <h2 class="section-title">Where I've competed &amp; learned</h2>
+      <p class="section-sub">Hackathons, case competitions, and workshops I've taken part in outside the classroom. Click a card to view the certificate.</p>
+    </div>
+    <div class="hack-grid">
+ 
+      <div class="hack-card reveal" tabindex="0" role="button" aria-haspopup="dialog"
+           data-cert-title="Cognizant Technoverse Hackathon"
+           data-cert-img="assets/Cognizant_Technoverse.jpg">
+        <div class="hack-top">
+          <div class="hack-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3a2 2 0 0 1 0 4h-1M7 5H4a2 2 0 0 0 0 4h1"/></svg></div>
+          <div>
+            <h3>Cognizant Technoverse Hackathon</h3>
+            <div class="hack-meta">
+              <span><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l8-4v18M13 21V11l6 3v7"/></svg>Cognizant</span>
+              <span><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>2026</span>
+            </div>
+          </div>
+        </div>
+        <p class="desc">Participated in Cognizant's national hackathon, collaborating to solve real-world technology challenges.</p>
+        <span class="view-cert-hint"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>View certificate</span>
+      </div>
+ 
+      <div class="hack-card reveal" tabindex="0" role="button" aria-haspopup="dialog"
+           data-cert-title="TechFusion 2.0"
+           data-cert-img="assets/TechnoFusion.jpg">
+        <div class="hack-top">
+          <div class="hack-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h.01M15 9h.01M9 15h6"/></svg></div>
+          <div>
+            <h3>TechFusion 2.0</h3>
+            <div class="hack-meta">
+              <span><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l8-4v18M13 21V11l6 3v7"/></svg>[Organizer]</span>
+              <span><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>[Year]</span>
+            </div>
+          </div>
+        </div>
+        <p class="desc">24-hour hackathon focused on IoT, Cybersecurity, and Blockchain technologies.</p>
+        <span class="view-cert-hint"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>View certificate</span>
+      </div>
+ 
+      <div class="hack-card reveal" tabindex="0" role="button" aria-haspopup="dialog"
+           data-cert-title="Green Business CASE-A-THON"
+           data-cert-img="assets/Green_Business_BNM.jpg">
+        <div class="hack-top">
+          <div class="hack-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <div>
+            <h3>Green Business CASE-A-THON</h3>
+            <div class="hack-meta">
+              <span><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l8-4v18M13 21V11l6 3v7"/></svg>BNM Institute of Technology</span>
+              <span><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>2025</span>
+            </div>
+          </div>
+        </div>
+        <p class="desc">Participated in a business innovation challenge centered on sustainable and green business solutions.</p>
+        <span class="view-cert-hint"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>View certificate</span>
+      </div>
+ 
+      <div class="hack-card reveal" tabindex="0" role="button" aria-haspopup="dialog"
+           data-cert-title="Bridging Technologies: Data Visualization Techniques"
+           data-cert-img="assets/certificates/bridging-technologies-data-visualization.jpg">
+        <div class="hack-top">
+          <div class="hack-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
+          <div>
+            <h3>Bridging Technologies: Data Visualization Techniques</h3>
+            <div class="hack-meta">
+              <span><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l8-4v18M13 21V11l6 3v7"/></svg>SJB Institute of Technology</span>
+              <span><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>[Year]</span>
+            </div>
+          </div>
+        </div>
+        <p class="desc">Hands-on workshop covering modern data visualization concepts and practical implementation.</p>
+        <span class="view-cert-hint"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>View certificate</span>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+ 
+<div class="divider wrap" style="max-width:1120px"></div>
+ 
+<!-- ================= CURRENTLY WORKING ON ================= -->
+<section class="pad" id="now">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Currently Working On</p>
+      <h2 class="section-title">In progress</h2>
+      <p class="section-sub">Projects I'm actively building right now.</p>
+    </div>
+    <div class="now-grid">
+ 
+      <div class="now-card reveal">
+        <div class="now-top">
+          <div class="now-title"><span class="now-emoji">🐰</span> Bunny — Personal AI Assistant</div>
+          <span class="status-badge"><span class="status-dot"></span>In Progress</span>
+        </div>
+        <p class="desc">Building an intelligent personal AI assistant capable of automating software development tasks, managing projects, answering queries, and assisting with day-to-day productivity through AI-powered workflows.</p>
+        <div>
+          <p class="now-label">Planned Technologies</p>
+          <div class="tech-row">
+            <span class="tech-tag">Python</span><span class="tech-tag">LLMs</span><span class="tech-tag">AI Agents</span><span class="tech-tag">FastAPI / Flask</span><span class="tech-tag">React</span><span class="tech-tag">Automation APIs</span>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="now-card reveal">
+        <div class="now-top">
+          <div class="now-title"><span class="now-emoji">🎬</span> Spoiler Shield</div>
+          <span class="status-badge"><span class="status-dot"></span>In Progress</span>
+        </div>
+        <p class="desc">Developing an AI-powered platform that helps users avoid movie and TV show spoilers by detecting and filtering spoiler content across social media, websites, and online discussions using Natural Language Processing.</p>
+        <div>
+          <p class="now-label">Planned Technologies</p>
+          <div class="tech-row">
+            <span class="tech-tag">Python</span><span class="tech-tag">NLP</span><span class="tech-tag">Machine Learning</span><span class="tech-tag">React</span><span class="tech-tag">Django / Flask</span>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+ 
+<div class="divider wrap" style="max-width:1120px"></div>
+ 
+<!-- ================= EDUCATION ================= -->
+<section class="pad" id="education">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Education</p>
+      <h2 class="section-title">Academic background</h2>
+    </div>
+    <div class="timeline reveal" style="margin-top:44px;">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <h3>B.E. Computer Science Engineering</h3>
+        <p class="meta">SJB Institute of Technology · 2023 – current</p>
+        <p class="cgpa">CGPA: 9.54 / 10</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <h3>Pre-University (PUC)</h3>
+        <p class="meta">Sri Kumaran's Home Composite PU College · 2023</p>
+        <p class="cgpa">Percentage: 92%</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <h3>SSLC</h3>
+        <p class="meta">Vikas High School · 2021</p>
+        <p class="cgpa">Percentage: 90.08%</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<div class="divider wrap" style="max-width:1120px"></div>
+ 
+<!-- ================= CERTIFICATIONS ================= -->
+<section class="pad" id="certifications">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Certifications</p>
+      <h2 class="section-title">Courses &amp; certifications</h2>
+      <p class="section-sub">Click a card to view the certificate.</p>
+    </div>
+    <div class="cert-grid" style="margin-top:36px;">
+      <div class="cert-card reveal" tabindex="0" role="button" aria-haspopup="dialog"
+           data-cert-title="Introduction to Industry 4.0 &amp; IIoT"
+           data-cert-img="assets/certificates/industry-4-0-iiot.jpg">
+        <div class="cert-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <p>Introduction to Industry 4.0 &amp; IIoT</p>
+        <span class="view-cert-hint"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>View certificate</span>
+      </div>
+      <div class="cert-card reveal" tabindex="0" role="button" aria-haspopup="dialog"
+           data-cert-title="AI in Human Resource Management"
+           data-cert-img="assets/certificates/ai-in-hr-management.jpg">
+        <div class="cert-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <p>AI in Human Resource Management</p>
+        <span class="view-cert-hint"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>View certificate</span>
+      </div>
+      <div class="cert-card reveal" tabindex="0" role="button" aria-haspopup="dialog"
+           data-cert-title="Economics of Innovation"
+           data-cert-img="assets/certificates/economics-of-innovation.jpg">
+        <div class="cert-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
+        <p>Economics of Innovation</p>
+        <span class="view-cert-hint"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>View certificate</span>
+      </div>
+      <div class="cert-card reveal" tabindex="0" role="button" aria-haspopup="dialog"
+           data-cert-title="Data Mining"
+           data-cert-img="assets/certificates/data-mining.jpg">
+        <div class="cert-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg></div>
+        <p>Data Mining</p>
+        <span class="view-cert-hint"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>View certificate</span>
+      </div>
+      <div class="cert-card reveal" tabindex="0" role="button" aria-haspopup="dialog"
+           data-cert-title="AI Data Engineering Analyst"
+           data-cert-img="assets/certificates/ai-data-engineering-analyst.jpg">
+        <div class="cert-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+        <p>AI Data Engineering Analyst</p>
+        <span class="view-cert-hint"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>View certificate</span>
+      </div>
+      <div class="cert-card reveal" tabindex="0" role="button" aria-haspopup="dialog"
+           data-cert-title="AI DevOps Analyst"
+           data-cert-img="assets/certificates/ai-devops-analyst.jpg">
+        <div class="cert-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+        <p>AI DevOps Analyst</p>
+        <span class="view-cert-hint"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>View certificate</span>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<div class="divider wrap" style="max-width:1120px"></div>
+ 
+<!-- ================= CONTACT ================= -->
+<section class="pad" id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Contact</p>
+      <h2 class="section-title">Let's build something</h2>
+      <p class="section-sub">Have a role, project, or idea in mind? I'd love to hear about it.</p>
+    </div>
+    <div class="contact-grid reveal" style="margin-top:20px;">
+      <div class="contact-links">
+        <a href="mailto:sanjananarendra11@gmail.com" class="contact-link-row">
+          <span class="ic"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span>
+          <span><span class="label" style="display:block;">Email</span><span class="value">sanjananarendra11@gmail.com</span></span>
+        </a>
+        <a href="https://github.com/sanjananarendra11" target="_blank" rel="noopener" class="contact-link-row">
+          <span class="ic"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></span>
+          <span><span class="label" style="display:block;">GitHub</span><span class="value">github.com/sanjananarendra11</span></span>
+        </a>
+        <a href="https://linkedin.com/in/sanjana-n-4679682b8" target="_blank" rel="noopener" class="contact-link-row">
+          <span class="ic"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span>
+          <span><span class="label" style="display:block;">LinkedIn</span><span class="value">linkedin.com/in/sanjana-n-4679682b8</span></span>
+        </a>
+      </div>
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name">
+          <span class="err" id="nameErr"></span>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com">
+          <span class="err" id="emailErr"></span>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me a bit about the opportunity..."></textarea>
+          <span class="err" id="messageErr"></span>
+        </div>
+        <div style="display:flex; align-items:center; gap:16px;">
+          <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
+          <span class="form-status" id="formStatus"></span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+ 
+<footer>
+  <div class="wrap footer-inner">
+    <span>© 2026 Sanjana N. Built with care.</span>
+    <div class="socials">
+      <a href="https://github.com/sanjananarendra11" target="_blank" rel="noopener" class="icon-btn" aria-label="GitHub">
+        <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+      </a>
+      <a href="https://linkedin.com/in/sanjana-n-4679682b8" target="_blank" rel="noopener" class="icon-btn" aria-label="LinkedIn">
+        <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="mailto:sanjananarendra11@gmail.com" class="icon-btn" aria-label="Email">
+        <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+ 
+<!-- ================= CERTIFICATE LIGHTBOX ================= -->
+<div class="cert-modal-overlay" id="certModalOverlay" role="dialog" aria-modal="true" aria-labelledby="certModalTitle">
+  <div class="cert-modal">
+    <div class="cert-modal-head">
+      <h3 id="certModalTitle">Certificate</h3>
+      <button class="cert-modal-close" id="certModalClose" aria-label="Close">
+        <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="cert-modal-body" id="certModalBody">
+      <!-- image or fallback injected here -->
+    </div>
+  </div>
+</div>
+ 
+<!-- ===== CHANGE #1: EmailJS CDN script added so emailjs.send() is available below.
+     Nothing else on the page depends on this — it only adds the `emailjs` global. ===== -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  // ===== CHANGE #2: EmailJS initialization =====
+  // Replace 'YOUR_PUBLIC_KEY' below with your EmailJS Public Key.
+  // Find it at: EmailJS Dashboard -> Account -> General -> Public Key
+  (function () {
+    emailjs.init({ publicKey: 'nT5wjARFypMVqwvlK' });
+  })();
+</script>
+ 
+<script>
+(function () {
+  var body = document.body;
+  var themeToggle = document.getElementById('themeToggle');
+  var themeIcon = document.getElementById('themeIcon');
+ 
+  var sunPath = '<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>';
+  var moonPath = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+ 
+  function applyTheme(theme) {
+    body.setAttribute('data-theme', theme);
+    themeIcon.innerHTML = theme === 'dark' ? sunPath : moonPath;
+  }
+ 
+  var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(prefersDark ? 'dark' : 'light');
+ 
+  themeToggle.addEventListener('click', function () {
+    var next = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+  });
+ 
+  // Mobile menu
+  var menuBtn = document.getElementById('menuBtn');
+  var mobilePanel = document.getElementById('mobilePanel');
+  menuBtn.addEventListener('click', function () {
+    mobilePanel.classList.toggle('open');
+  });
+  mobilePanel.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { mobilePanel.classList.remove('open'); });
+  });
+ 
+  // Scroll reveal
+  var revealEls = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(function (el) { io.observe(el); });
+ 
+  // Scroll-spy active nav link
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('.nav-links a');
+  var spy = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var id = entry.target.getAttribute('id');
+        navLinks.forEach(function (l) {
+          l.classList.toggle('active', l.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+  sections.forEach(function (s) { spy.observe(s); });
+ 
+  // Contact form validation + EmailJS submission
+  var form = document.getElementById('contactForm');
+  var status = document.getElementById('formStatus');
+  var submitBtn = document.getElementById('submitBtn'); // CHANGE #3: reference to submit button for loading state
+  var submitBtnDefaultText = submitBtn.textContent;
+ 
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('name');
+    var email = document.getElementById('email');
+    var message = document.getElementById('message');
+    var nameErr = document.getElementById('nameErr');
+    var emailErr = document.getElementById('emailErr');
+    var messageErr = document.getElementById('messageErr');
+    var valid = true;
+ 
+    nameErr.textContent = ''; emailErr.textContent = ''; messageErr.textContent = '';
+ 
+    // ----- Validation (unchanged: Name, Email, Message all required) -----
+    if (!name.value.trim()) { nameErr.textContent = 'Please enter your name.'; valid = false; }
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email.value.trim())) { emailErr.textContent = 'Please enter a valid email.'; valid = false; }
+    if (!message.value.trim() || message.value.trim().length < 10) { messageErr.textContent = 'Message should be at least 10 characters.'; valid = false; }
+ 
+    if (!valid) {
+      status.textContent = '';
+      return;
+    }
+ 
+    // ===== CHANGE #4: Loading state while sending =====
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    status.textContent = 'Sending your message...';
+ 
+    // ===== CHANGE #5: Actual EmailJS send call =====
+    // Replace 'YOUR_SERVICE_ID' with your EmailJS Service ID
+    //   Find it at: EmailJS Dashboard -> Email Services -> (your service) -> Service ID
+    // Replace 'YOUR_TEMPLATE_ID' with your EmailJS Template ID
+    //   Find it at: EmailJS Dashboard -> Email Templates -> (your template) -> Template ID
+    // The template's "To email" field should be set to sanjananarendra11@gmail.com
+    // in the EmailJS dashboard so every submission lands in that inbox.
+    // The template params below ({{from_name}}, {{from_email}}, {{message}}) must match
+    // the variable names used inside your EmailJS email template.
+    emailjs.send('service_e66984j', 'template_57tbhu8', {
+      from_name: name.value.trim(),
+      from_email: email.value.trim(),
+      message: message.value.trim(),
+      to_email: 'sanjananarendra11@gmail.com'
+    }).then(function () {
+      // ----- Success -----
+      status.textContent = "Thank you! Your message has been sent successfully. I'll get back to you soon.";
+      form.reset();
+    }).catch(function (err) {
+      // ----- Failure -----
+      status.textContent = 'Failed to send message. Please try again later.';
+      console.error('EmailJS send error:', err);
+    }).finally(function () {
+      // ----- Reset button state -----
+      submitBtn.disabled = false;
+      submitBtn.textContent = submitBtnDefaultText;
+    });
+  });
+ 
+  // ---------- Certificate lightbox ----------
+  var certOverlay = document.getElementById('certModalOverlay');
+  var certTitle = document.getElementById('certModalTitle');
+  var certBody = document.getElementById('certModalBody');
+  var certClose = document.getElementById('certModalClose');
+  var lastFocused = null;
+ 
+  function openCertModal(title, imgSrc) {
+    lastFocused = document.activeElement;
+    certTitle.textContent = title || 'Certificate';
+    certBody.innerHTML = '';
+ 
+    var img = new Image();
+    img.alt = title + ' certificate';
+    img.onload = function () {
+      certBody.innerHTML = '';
+      certBody.appendChild(img);
+    };
+    img.onerror = function () {
+      certBody.innerHTML =
+        '<div class="cert-modal-fallback">' +
+        '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>' +
+        '<p>Certificate image not found yet.<br>Add it at <code>' + imgSrc + '</code>.</p>' +
+        '</div>';
+    };
+    img.src = imgSrc;
+ 
+    certOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    certClose.focus();
+  }
+ 
+  function closeCertModal() {
+    certOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+    certBody.innerHTML = '';
+    if (lastFocused) lastFocused.focus();
+  }
+ 
+  document.querySelectorAll('.hack-card, .cert-card').forEach(function (card) {
+    card.addEventListener('click', function () {
+      openCertModal(card.getAttribute('data-cert-title'), card.getAttribute('data-cert-img'));
+    });
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openCertModal(card.getAttribute('data-cert-title'), card.getAttribute('data-cert-img'));
+      }
+    });
+  });
+ 
+  certClose.addEventListener('click', closeCertModal);
+  certOverlay.addEventListener('click', function (e) {
+    if (e.target === certOverlay) closeCertModal();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && certOverlay.classList.contains('open')) closeCertModal();
+  });
+ 
+  // Subtle hero background — node/connection motif
+  var heroBg = document.getElementById('heroBg');
+  var svgns = 'http://www.w3.org/2000/svg';
+  var svg = document.createElementNS(svgns, 'svg');
+  svg.setAttribute('width', '100%');
+  svg.setAttribute('height', '100%');
+  svg.setAttribute('viewBox', '0 0 1200 800');
+  svg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+ 
+  var pts = [];
+  for (var i = 0; i < 22; i++) {
+    pts.push({ x: Math.random() * 1200, y: Math.random() * 800, r: 1.4 + Math.random() * 1.6 });
+  }
+  var accentColor = getComputedStyle(document.body).getPropertyValue('--accent') || '#2563EB';
+ 
+  pts.forEach(function (p, i) {
+    for (var j = i + 1; j < pts.length; j++) {
+      var q = pts[j];
+      var d = Math.hypot(p.x - q.x, p.y - q.y);
+      if (d < 190) {
+        var line = document.createElementNS(svgns, 'line');
+        line.setAttribute('x1', p.x); line.setAttribute('y1', p.y);
+        line.setAttribute('x2', q.x); line.setAttribute('y2', q.y);
+        line.setAttribute('stroke', 'var(--accent)');
+        line.setAttribute('stroke-width', '0.6');
+        line.setAttribute('opacity', (0.14 - d / 1900).toFixed(2));
+        svg.appendChild(line);
+      }
+    }
+  });
+  pts.forEach(function (p) {
+    var c = document.createElementNS(svgns, 'circle');
+    c.setAttribute('cx', p.x); c.setAttribute('cy', p.y); c.setAttribute('r', p.r);
+    c.setAttribute('fill', 'var(--accent)');
+    c.setAttribute('opacity', '0.35');
+    svg.appendChild(c);
+  });
+  heroBg.appendChild(svg);
+})();
+</script>
+</body>
+</html>
+ 
